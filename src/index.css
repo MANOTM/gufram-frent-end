@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'TheFuture';
+  src: url('./assets/fonts/TheFuture.otf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  color:#000000;
+  font-family: 'TheFuture', sans-serif;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+html.has-scroll-dragging,
+html.has-scroll-dragging * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+[hidden] {
+  display: none;
+}
+.d-none {
+  display: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  width: 97%;
+  margin-inline: auto;
+}
