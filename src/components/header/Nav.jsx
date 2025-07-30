@@ -11,7 +11,7 @@ function Nav({ handleNavClose }) {
                 className="nav"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0  }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.5, ease: "easeInOut", delay: 0.34 }}
             >
                 <nav className='center'>
@@ -26,13 +26,13 @@ function Nav({ handleNavClose }) {
                 </nav>
                 <footer>
                     <div className="h-footer">
-                        <div className='center'>
+                        <div className='center button'>
                             <span>
                                 <World />
                             </span>
                             <p>ITALIANO</p>
                         </div>
-                        <div className='center'>
+                        <div className='center button'>
                             <span>
                                 <Email />
                             </span>

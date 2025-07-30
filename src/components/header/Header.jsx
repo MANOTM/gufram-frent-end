@@ -1,10 +1,11 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Search from '../../icon/Search';
-import './header.css'; 
+import './header.css';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Nav from './Nav';
 import SearchBox from './SearchBox';
+import BackRow from '../../icon/BackRow';
 
 function Header() {
     const location = useLocation();
@@ -18,17 +19,25 @@ function Header() {
     const handleNavClose = () => {
         setOpenNav(!OpenNav);
         setOpenSearch(false);
-    } 
+    }
+
+     const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1); // Go back to the previous page
+  }
 
     return (
-        <motion.div
-            className={`header ${OpenNav || OpenSearch ? ' open' : ''}`}
-            onClick={() => {setOpenNav(false); setOpenSearch(false);}}
-        > 
+        <>
+            <motion.div
+                className={`header ${OpenNav || OpenSearch ? ' open' : ''}`}
+                onClick={() => { setOpenNav(false); setOpenSearch(false); }}
+            >
+            </motion.div>
             <motion.header
                 className={`main-header ${isHome ? ' active' : ''}`}
                 onClick={e => e.stopPropagation()}
-                animate={{ height:OpenNav ? '485px':OpenSearch ? '130px':'54px' }} 
+                animate={{ height: OpenNav ? '485px' : OpenSearch ? '130px' : '54px' }}
                 transition={{ duration: 0.1, ease: "linear" }}
                 style={{ overflow: 'hidden' }}
             >
@@ -41,13 +50,19 @@ function Header() {
                     </div>
                     <Link to="/" className='logo'>guframe</Link>
                     <div className="serach" onClick={handleSearchClose}>
-                        <Search/>
+                        <Search />
                     </div>
                 </div>
-                {OpenNav && <Nav handleNavClose={handleNavClose}/>}
+                {OpenNav && <Nav handleNavClose={handleNavClose} />}
                 {OpenSearch && <SearchBox />}
             </motion.header>
-        </motion.div>
+            {!isHome && (
+
+                <div className="return center" onClick={handleBack}>
+                <BackRow/>
+            </div>
+            )}
+        </>
     )
 }
 

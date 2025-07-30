@@ -20,7 +20,7 @@ function Loading() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }} // Smooth fade
                 >
-                    guframe
+                    gufram
                 </motion.div>
             )}
         </AnimatePresence>

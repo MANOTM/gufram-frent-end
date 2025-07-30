@@ -1,0 +1,83 @@
+.not-found {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      border-top: 1px solid black;
+      padding: 15px 0;
+      a {
+        width: 100%;
+        border: 1px solid black;
+        padding: 10px 0;
+        gap: 10px;
+        svg {
+          transform: rotate(138deg);
+          -webkit-transform: rotate(138deg);
+          -moz-transform: rotate(138deg);
+          -ms-transform: rotate(138deg);
+          -o-transform: rotate(138deg);
+        }
+      }
+    }
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.button {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px 0;
+  gap: 10px;
+  display: flex;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  * {
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.button:hover svg path {
+  fill: #ffffff !important ;
+}
+
+.button:hover {
+  color: #ffffff;
+}
+
+.button:hover:before {
+  top: -35%;
+  background-color: #000000;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
