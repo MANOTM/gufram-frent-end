@@ -179,6 +179,14 @@
   cursor: pointer;
   border-top: 1px solid black;
   padding: 1rem 0;
+  transition: .2s linear;
+  -webkit-transition: .2s linear;
+  -moz-transition: .2s linear;
+  -ms-transition: .2s linear;
+  -o-transition: .2s linear;
+}
+.got-tp:hover{
+  padding: 1rem .5rem;
 }
 .got-tp svg{
   transform: rotate(138deg);

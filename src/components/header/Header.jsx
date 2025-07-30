@@ -13,7 +13,9 @@ function Header() {
     
     const [OpenNav, setOpenNav] = useState(false);
     const [OpenSearch, setOpenSearch] = useState(false);
+    console.log(OpenSearch);
     const [Result, setResult] = useState([]);
+
     const handleSearchClose = () => {
         setOpenSearch(!OpenSearch);
         setOpenNav(false);
@@ -59,7 +61,7 @@ function Header() {
                     </div>
                 </div>
                 {OpenNav && <Nav handleNavClose={handleNavClose} />}
-                {OpenSearch && <SearchBox Result={Result} setResult={setResult} handleNavClose={handleNavClose}/>}
+                {OpenSearch && <SearchBox Result={Result} setResult={setResult} handleNavClose={handleNavClose} handleSearchClose={handleSearchClose}/>}
             </motion.header>
             {!isHome && (
 
