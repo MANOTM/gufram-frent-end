@@ -1,0 +1,12 @@
+.none-b{
+    border: none !important;
+}
+.history li{
+    font-size: 13px;
+    opacity: .9;
+}
+.history .flex-text{
+    border-bottom: none !important;
+    border-top: 1px solid black;
+    padding: 20px 0;
+}

@@ -25,10 +25,10 @@ function App() {
       <Loading/>
       <Header />
       <Routes location={loacation} key={loacation.pathname} >
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Authors />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/:id' element={<Article />} />
-        <Route path='/authors' element={<Authors />} />
+        <Route path='/products' element={<Home />} />
         <Route path='/history' element={<History />} />
         <Route path='/news' element={<News />} />
       </Routes>

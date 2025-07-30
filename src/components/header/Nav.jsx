@@ -16,12 +16,12 @@ function Nav({ handleNavClose }) {
             >
                 <nav className='center'>
                     <ul onClick={handleNavClose}>
-                        <li><Link to="/">Products</Link></li>
+                        <li><Link to="/products">Products</Link></li>
                         <li><Link to="/history">History</Link></li>
-                        <li><Link to="/authors">Authors</Link></li>
+                        <li><Link to="/">Authors</Link></li>
                         <li><Link to="/">Exhibitions</Link></li>
-                        <li><Link to="/contact">News</Link></li>
-                        <li><Link to="/news">Contact</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/">News</Link></li>
                     </ul>
                 </nav>
                 <footer>

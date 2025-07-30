@@ -1,0 +1,32 @@
+.authors {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  overflow: hidden;
+}
+
+.author-box {
+  width: 100%;
+  overflow: hidden;
+  height: 355px;
+}
+.author-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+  .authors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .authors {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .author-box{
+    height: 600px;
+  }
+}

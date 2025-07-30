@@ -9,12 +9,17 @@ import BackRow from '../../icon/BackRow';
 
 function Header() {
     const location = useLocation();
-    const isHome = location.pathname === '/';
+    const isHome = location.pathname === '/' || location.pathname === '/products'; 
+    
     const [OpenNav, setOpenNav] = useState(false);
     const [OpenSearch, setOpenSearch] = useState(false);
+    const [Result, setResult] = useState([]);
     const handleSearchClose = () => {
         setOpenSearch(!OpenSearch);
         setOpenNav(false);
+        setResult([]);
+        console.log(Result);
+        
     }
     const handleNavClose = () => {
         setOpenNav(!OpenNav);
@@ -37,7 +42,7 @@ function Header() {
             <motion.header
                 className={`main-header ${isHome ? ' active' : ''}`}
                 onClick={e => e.stopPropagation()}
-                animate={{ height: OpenNav ? '485px' : OpenSearch ? '130px' : '54px' }}
+                animate={{ height: OpenNav ? '485px' :Result.length > 0  ? 'fit-content' : OpenSearch ? '130px' : '54px' }}
                 transition={{ duration: 0.1, ease: "linear" }}
                 style={{ overflow: 'hidden' }}
             >
@@ -54,7 +59,7 @@ function Header() {
                     </div>
                 </div>
                 {OpenNav && <Nav handleNavClose={handleNavClose} />}
-                {OpenSearch && <SearchBox />}
+                {OpenSearch && <SearchBox Result={Result} setResult={setResult} handleNavClose={handleNavClose}/>}
             </motion.header>
             {!isHome && (
 

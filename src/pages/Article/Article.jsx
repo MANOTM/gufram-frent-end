@@ -18,7 +18,6 @@ function Article() {
         api.get('/products/' + id)
             .then(response => {
                 setProduct(response.data);
-                console.log(response.data);
 
                 setLoading(false);
             })
